@@ -30,3 +30,36 @@ begin catch
   print 'ERROR MESSAGE :' + ISNULL(ERROR_MESSAGE(), '');
   rollback tran Tran_2017_06_12
 end catch
+
+
+SQLServer 游标的用法
+
+DECLARE @name varchar(30)
+DECLARE @salary int
+DECLARE @avg int
+
+DECLARE test_cursor for select * from dbo.Salaries
+OPEN test_cursor
+FETCH test_cursor into @name, @salary, @avg
+WHILE(@@FETCH_STATUS=0)
+BEGIN
+  PRINT @name
+  PRINT @salary
+  PRINT @avg
+FETCH test_cursor into @name, @salary, @avg
+END
+CLOSE test_cursor
+DEALLOCATE test_cursor
+
+
+
+
+
+
+
+
+
+
+
+
+
