@@ -51,6 +51,18 @@ END
 CLOSE test_cursor
 DEALLOCATE test_cursor
 
+相对高级的用法
+SELECT INTO
+1)select * into newtable from oldtable;
+2)select o.column_name into newtable from oldtable o;
+
+INSERT INTO SELECT
+1)insert into newtable select * from oldtable;
+2)insert into newtable (column_name) select o.column_name from oldtable o;
+//以上，只有到真正实践的时候才能体会how to use.Practice makes perfect
+
+
+
 
 
 
