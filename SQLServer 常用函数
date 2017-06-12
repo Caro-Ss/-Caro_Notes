@@ -15,3 +15,18 @@ PRINT CEILING(3.7) //4
 
 FUNCTION CAST() //强制类型转换
 CAST(FLOOR(3.2) AS VARCHAR)//从整形到字符串
+
+
+SQLServer也有捕获异常的机制
+
+begin try
+  begin tran Tran_2017_06_12
+    //do something
+  commit tran Tran_2017_06_12
+end try
+
+begin catch
+  print 'ERROR LINE :' + CONVERT(varchar, ERROR_LINE());
+  print 'ERROR MESSAGE :' + ISNULL(ERROR_MESSAGE(), '');
+  rollback tran Tran_2017_06_12
+end catch
