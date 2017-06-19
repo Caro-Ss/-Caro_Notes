@@ -1,0 +1,8 @@
+Action:Action类是用户请求和业务逻辑之间的桥梁，每个Action充当客户的一项业务代理。是MVC模式中Control层。
+Service:service层是在mcv三层模式中新添加一层，能够更加清晰的定义应用程序的边界，需要操作数据的时候，通过service层访问DAO层来实现。
+  service层做的事情，不仅仅是调用DAO操作数据，还会包含了一定的业务逻辑。整个程序的设计，也变成了针对服务进行设计。
+DAO：Data Access Object是一个数据访问接口，数据访问：顾名思义就是与数据库打交道。夹在业务逻辑与数据库资源中间。是MVC模式中Model层
+PO：Persistent Object即持久对象，它们是由一组属性和属性的get和set方法组成。可以看成是与数据库中的表相映射的java对象
+VO :(value object) ，值对象
+通常用于业务层之间的数据传递，和PO一样也是仅仅包含数据而已。但应是抽象出的业务对象,可以和表对应,也可以不,这根据业务的需要.
+DTO：数据传输对象(Data Transfer Object)的缩写，又叫VO，是 数据传输对象，一般层与层之间的通信都是转换成对应的VO然后进行传递 
