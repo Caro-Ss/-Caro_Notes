@@ -16,3 +16,32 @@ function post(url, params) {
      
 //调用方法 如      
 post('pages/statisticsJsp/excel.action', {html :prnhtml,cm1:'sdsddsd',cm2:'haha'});
+
+if (jQuery("#reportExcelForm").length==0) {
+	var form = "<form/>"
+	var input = "<input/>"
+	form.append(input);
+	jQuery("body").append(form);
+} else {
+	jQuery("#reportExcelForm:input").val(url);
+	
+}
+jQuery("#reportExcelForm").submit();
+
+
+$(document).ready(function(){
+    $("a.delete").click(function(event){
+        action = this.getAttribute("action")
+        form = $("<form></form>")
+        form.attr('action',action)
+        form.attr('method','post')
+        input1 = $("<input type='hidden' name='input1' />")
+        input1.attr('value','input1 value')
+        input2 = $("<input type='text' name='textinput' value='text input' />")
+        form.append(input1)
+        form.append(input2)
+        form.appendTo("body")
+        form.css('display','none')
+        form.submit()
+    })
+})
