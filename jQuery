@@ -1,0 +1,2 @@
+如果要取得一个表单下的input输入框，可以这样做
+jQuery("#formID input[name='inputName']");
