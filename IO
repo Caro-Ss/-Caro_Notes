@@ -1,0 +1,6 @@
+基于字节操作的I/O接口:InputStream 和 OutputStream
+基于字符操作的I/O接口:Writer 和 Reader
+基于磁盘操作的I/O接口:File
+基于网络操作的I/O接口:Socket
+
+前两组主要是传输数据的数据格式,后两组主要是传输数据的方式
