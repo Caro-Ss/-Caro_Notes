@@ -31,7 +31,7 @@
 in.read()
 in.read(byte[] b)
 int.read(byte b[], int off, int len)
-以上三个读的方法返回的都是int类型，表示读到的字节数
+以上三个读的方法返回的都是int类型，后两个表示读到的字节数，第一个表示读到的字节
 
 out.write(int b)
 out.write(byte[] b)
