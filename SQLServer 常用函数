@@ -38,7 +38,7 @@ DECLARE @name varchar(30)
 DECLARE @salary int
 DECLARE @avg int
 
-DECLARE test_cursor for select * from dbo.Salaries
+DECLARE test_cursor cursor for select * from dbo.Salaries
 OPEN test_cursor
 FETCH test_cursor into @name, @salary, @avg
 WHILE(@@FETCH_STATUS=0)
