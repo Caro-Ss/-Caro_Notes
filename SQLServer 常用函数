@@ -62,6 +62,14 @@ INSERT INTO SELECT
 //以上，只有到真正实践的时候才能体会how to use.Practice makes perfect
 
 
+update prem set prem.PKGPRMRTCD = (
+	select PRMRATECD from COMPCNTD.NOVA.TPOLPDTPLN_TEMPLATE template 
+	where template.PKGPRDCD = prem.pkgcode COLLATE SQL_Latin1_General_CP1_CI_AS and template.PRODCODE = prem.Prodcode COLLATE SQL_Latin1_General_CP1_CI_AS and template.BENPLNCD = prem.Plancode COLLATE SQL_Latin1_General_CP1_CI_AS
+)
+from tnovaprodprem prem
+where pkgcode = 'FLX03' 
+
+
 
 
 
